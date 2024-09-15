@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     socket.on('users', (connectedUsers) => {
-      if (connectedUsers == 2) {
+      if (connectedUsers === 2) {
         setMessage('your partner is here, too!');
       } else {
         setMessage("your partner isn't here yet :(");
@@ -45,18 +45,17 @@ function App() {
       <RadialCircle />
       <h3>{message}</h3>
       <Cloud />
-      <div
-        className="partner-cursor"
+      <img
+        src='cursor.png'
+        alt='Partner cursor'
         style={{
           position: 'absolute',
           left: partnerCursor.x,
           top: partnerCursor.y,
-          width: '20px',
-          height: '20px',
-          backgroundColor: 'red',
-          borderRadius: '50%',
-          zIndex: 10,
+          width: '10px',
+          height: 'auto',
           pointerEvents: 'none',
+          zIndex: 10,
         }}
       />
     </div>

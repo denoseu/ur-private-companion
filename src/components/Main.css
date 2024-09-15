@@ -1,0 +1,22 @@
+.header {
+    width: 90%;
+    max-width: 800px;
+    background-color: #DFFDFB;
+    padding: 20px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+h3 {
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+    .header {
+        width: 70%;
+        padding: 40px;
+    }
+}

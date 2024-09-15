@@ -1,6 +1,6 @@
 .cloud {
   position: absolute;
-  width: 100px;
+  width: 150px;
   height: auto;
   animation: moveCloud 10s linear infinite;
 }

@@ -12,13 +12,16 @@ function RadialCircle() {
 function App() {
   const [message, setMessage] = useState("your partner isn't here yet :(");
   const [partnerCursor, setPartnerCursor] = useState({ x: 0, y: 0 });
+  const [isPartnerHere, setIsPartnerHere] = useState(false);
 
   useEffect(() => {
     socket.on('users', (connectedUsers) => {
       if (connectedUsers === 2) {
         setMessage('your partner is here, too!');
+        setIsPartnerHere(true);
       } else {
         setMessage("your partner isn't here yet :(");
+        setIsPartnerHere(false);
       }
     });
 
@@ -45,19 +48,21 @@ function App() {
       <RadialCircle />
       <h3>{message}</h3>
       <Cloud />
-      <img
-        src='cursor.png'
-        alt='Partner cursor'
-        style={{
-          position: 'absolute',
-          left: partnerCursor.x,
-          top: partnerCursor.y,
-          width: '10px',
-          height: 'auto',
-          pointerEvents: 'none',
-          zIndex: 10,
-        }}
-      />
+      {isPartnerHere && (
+        <img
+          src='cursor.png'
+          alt='Partner cursor'
+          style={{
+            position: 'absolute',
+            left: partnerCursor.x,
+            top: partnerCursor.y,
+            width: '10px',
+            height: 'auto',
+            pointerEvents: 'none',
+            zIndex: 10,
+          }}
+        />
+      )}
     </div>
   );
 }

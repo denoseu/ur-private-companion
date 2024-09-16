@@ -10,7 +10,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:3001", "https://ur-private-companion.vercel.app/"], //frontend
+    origin: ["http://localhost:3000", "http://localhost:3001", "http://192.168.198.142:3001", "https://ur-private-companion.vercel.app/"], //frontend
     methods: ["GET", "POST"]
   }
 });

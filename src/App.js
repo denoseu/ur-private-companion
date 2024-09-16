@@ -3,7 +3,8 @@ import './App.css';
 import Cloud from './components/Cloud';
 import { io } from 'socket.io-client';
 
-const socket = io('http://192.168.198.142:4000');
+// const socket = io('http://192.168.198.142:4000');
+const socket = io('http://localhost:4000');
 // const socket = io('https://66066920-4ec0-43cc-ace1-533693596903.e1-us-cdp-2.choreoapps.dev');
 
 function RadialCircle() {
